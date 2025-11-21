@@ -3,8 +3,8 @@ $server_start = microtime(true);
 
 include 'menu.php';
 
-$x_text = "1 сторінка (Lab4_p2)";
-$y_text = "1 page (Lab4_p2)";
+$x_text = "2 сторінка";
+$y_text = "2 page";
 
 $block2_text = "<p>“I feel it coming, I feel it coming, babe…” — The Weeknd</p>";
 $block3_text = "<p>“Save your tears for another day…” — The Weeknd</p>";
@@ -46,11 +46,6 @@ $block5_img = "<img src='images/weeknd_concert2.png' alt='The Weeknd Concert 2' 
 
   <div class="block4">
     <div class="collapse-view-wrapper">
-      <h2>Набір «Collapse» з сервера</h2>
-      <p>
-        Дані беруться з БД через <code>lab4_load.php</code> і відображаються як набір елементів Collapse.<br>
-        Також організовано періодичний асинхронний контроль змін (оновлення кожні 5 секунд).
-      </p>
 
       <div id="collapses-container" class="collapse-set"></div>
       <div id="status" class="status-message status-info">Завантаження даних…</div>
@@ -81,7 +76,7 @@ function renderCollapses(items) {
   container.innerHTML = '';
 
   if (!items || items.length === 0) {
-    container.innerHTML = '<p>Набір порожній. Додай елементи на першій сторінці (lab4_p1.php).</p>';
+    container.innerHTML = '<p>Набір порожній.</p>';
     return;
   }
 
@@ -98,7 +93,7 @@ function renderCollapses(items) {
 
     const iconSpan = document.createElement('span');
     iconSpan.className = 'collapse-icon';
-    iconSpan.textContent = '▶';
+    iconSpan.textContent = '>';
 
     header.appendChild(titleSpan);
     header.appendChild(iconSpan);

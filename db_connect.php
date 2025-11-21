@@ -1,8 +1,13 @@
 <?php
-$host = 'sql312.infinityfree.com';
+/* $host = 'sql312.infinityfree.com';
 $db   = 'if0_40473110_php_db';
 $user = 'if0_40473110';
-$pass = 'vYWoOvlwRe';
+$pass = 'vYWoOvlwRe'; */
+
+$host = 'localhost';
+$db   = 'lab_php';
+$user = 'root';
+$pass = '';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
 $options = [

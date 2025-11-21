@@ -3,8 +3,8 @@ $server_start = microtime(true);
 
 include 'menu.php';
 
-$x_text = "1 сторінка (Lab4_p1)";
-$y_text = "1 page (Lab4_p1)";
+$x_text = "1 сторінка";
+$y_text = "1 page";
 
 $block2_text = "<p>“I feel it coming, I feel it coming, babe…” — The Weeknd</p>";
 $block3_text = "<p>“Save your tears for another day…” — The Weeknd</p>";
@@ -48,12 +48,6 @@ $block5_img = "<img src='images/weeknd_concert2.png' alt='The Weeknd Concert 2' 
 
   <div class="block4">
     <div class="collapse-form-wrapper">
-      <h2>Конструктор набору «Collapse»</h2>
-      <p>
-        Додай елементи (заголовок + текст). Після цього натисни
-        <strong>«Зберегти в БД»</strong>.<br>
-        На другій сторінці <code>lab4_p2.php</code> цей набір буде відображений як працюючий Collapse.
-      </p>
 
       <div id="collapse-items-container"></div>
 
@@ -94,10 +88,10 @@ function createFormItem(title = '', content = '') {
 
   wrapper.innerHTML = `
     <div class="collapse-form-item-header">
-      <input type="text" class="collapse-title-input" placeholder="Заголовок" value="${title}">
+      <input type="text" class="collapse-title-input" placeholder="заголовок" value="${title}">
       <button type="button" class="btn btn-small btn-remove">Видалити</button>
     </div>
-    <textarea class="collapse-content-input" placeholder="Вміст">${content}</textarea>
+    <textarea class="collapse-content-input" placeholder="вміст">${content}</textarea>
   `;
 
   const removeBtn = wrapper.querySelector('.btn-remove');
@@ -113,7 +107,7 @@ addBtn.addEventListener('click', () => {
 });
 
 container.appendChild(
-  createFormItem('Приклад заголовку', 'Приклад тексту для Collapse.')
+  createFormItem('', '')
 );
 
 saveBtn.addEventListener('click', () => {
