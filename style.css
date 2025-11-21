@@ -204,15 +204,12 @@ body {
     padding: 6px 10px;
     cursor: pointer;
     user-select: none;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     background: #baffe2;
     border: 1px solid #005a34;
     border-radius: 4px;
-
     font-size: 14px;
     font-weight: 600;
     box-sizing: border-box;
