@@ -241,14 +241,11 @@ body {
 .collapse-content {
     padding: 0 10px;
     margin-top: 2px;
-
     border: 1px solid #005a34;
     border-radius: 4px;
     background: #c6ffff;
-
     font-size: 14px;
     line-height: 1.4;
-
     max-height: 0;
     overflow: hidden;
     box-sizing: border-box;
