@@ -151,7 +151,7 @@ $block5_img = "<img src='images/weeknd_concert2.png' alt='Weeknd 2' style='width
     
     <div class="block6">
         <?= $block6_text ?>
-        <button id="btn-play">PLAY ANIMATION (LAB 5)</button>
+        <button id="btn-play">PLAY ANIMATION</button>
     </div>
 
     <footer class="block7">
@@ -181,13 +181,11 @@ $block5_img = "<img src='images/weeknd_concert2.png' alt='Weeknd 2' style='width
     window.__serverGenMs = <?php echo round((microtime(true) - $server_start) * 1000, 1); ?>;
 
     document.addEventListener('DOMContentLoaded', () => {
-        // Performance Badge
         const badge = document.createElement('div'); 
         badge.id = 'perf-badge'; 
         badge.innerHTML = `Server gen: ${window.__serverGenMs} ms`; 
         document.body.appendChild(badge);
 
-        // DOM Elements
         const workLayer = document.getElementById('work'), 
               animArea = document.getElementById('anim'), 
               msgLog = document.getElementById('msg-log'), 
@@ -307,10 +305,10 @@ $block5_img = "<img src='images/weeknd_concert2.png' alt='Weeknd 2' style='width
             if(pos1.y <= 0){ pos1.y=0; vel1.y*=-1; logEvent("Blue Hit Top"); evt=true; }
             if(pos1.y >= H-size){ pos1.y=H-size; vel1.y*=-1; logEvent("Blue Hit Bottom"); evt=true; }
             
-            if(pos2.x <= 0){ pos2.x=0; vel2.x*=-1; logEvent("Org Hit Left"); evt=true; }
-            if(pos2.x >= W-size){ pos2.x=W-size; vel2.x*=-1; logEvent("Org Hit Right"); evt=true; }
-            if(pos2.y <= 0){ pos2.y=0; vel2.y*=-1; logEvent("Org Hit Top"); evt=true; }
-            if(pos2.y >= H-size){ pos2.y=H-size; vel2.y*=-1; logEvent("Org Hit Bottom"); evt=true; }
+            if(pos2.x <= 0){ pos2.x=0; vel2.x*=-1; logEvent("Orange Hit Left"); evt=true; }
+            if(pos2.x >= W-size){ pos2.x=W-size; vel2.x*=-1; logEvent("Orange Hit Right"); evt=true; }
+            if(pos2.y <= 0){ pos2.y=0; vel2.y*=-1; logEvent("Orange Hit Top"); evt=true; }
+            if(pos2.y >= H-size){ pos2.y=H-size; vel2.y*=-1; logEvent("Orange Hit Bottom"); evt=true; }
 
             if (checkCollision(pos1, pos2)) { 
                 isAnimating = false; 
