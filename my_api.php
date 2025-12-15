@@ -62,14 +62,15 @@ try {
         }
     }
     elseif ($action === 'get_results') {
-        $limit = 50;
+        // ПРИБРАНО ЛІМІТ І ЗМІНЕНО СОРТУВАННЯ
         try {
-            $stmt1 = $pdo->query("SELECT * FROM lab5_immediate ORDER BY id DESC LIMIT $limit");
+            // Вибираємо ВСІ записи, сортуємо за ID від меншого до більшого (ASC)
+            $stmt1 = $pdo->query("SELECT * FROM lab5_immediate ORDER BY id ASC");
             $data1 = $stmt1->fetchAll();
         } catch (Exception $e) { $data1 = []; }
 
         try {
-            $stmt2 = $pdo->query("SELECT * FROM lab5_batch ORDER BY id DESC LIMIT $limit");
+            $stmt2 = $pdo->query("SELECT * FROM lab5_batch ORDER BY id ASC");
             $data2 = $stmt2->fetchAll();
         } catch (Exception $e) { $data2 = []; }
 

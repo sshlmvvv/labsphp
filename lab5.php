@@ -101,20 +101,29 @@ $block5_img = "<img src='images/weeknd_concert2.png' alt='Weeknd 2' style='width
             color: #555; 
         }
 
-        #results-table { 
+        /* Стилі для таблиці результатів */
+        .results-table { 
             width: 100%; 
             border-collapse: collapse; 
             font-size: 10px; 
             background: white; 
         }
 
-        #results-table th, #results-table td { 
+        .results-table th, .results-table td { 
             border: 1px solid #ccc; 
             padding: 3px; 
             text-align: left; 
         }
 
-        #results-table th { background: #e0e0e0; }
+        .results-table th { background: #e0e0e0; }
+
+        /* Стиль для скрол-контейнера */
+        .scroll-container {
+            max-height: 250px; 
+            overflow-y: auto; 
+            border: 1px solid #999;
+            background: #fff;
+        }
 
         #perf-badge { 
             position: fixed; 
@@ -382,21 +391,26 @@ $block5_img = "<img src='images/weeknd_concert2.png' alt='Weeknd 2' style='width
                     throw new Error("Помилка від сервера БД: " + data.error);
                 }
 
+                // Використовуємо контейнери зі скролом для таблиць
                 let html = `<h3>Звіт (Сервер: ${data.server_now})</h3>
                 <div style="display:flex; gap:10px;">
                     <div style="flex:1">
                         <h4>Спосіб 1 (Миттєво)</h4>
-                        <table id="results-table">
-                            <tr><th>ID</th><th>Клієнт</th><th>Сервер</th><th>Подія</th></tr>
-                            ${data.immediate.map(r => `<tr><td>${r.event_id}</td><td>${r.client_time}</td><td>${r.server_time.split(' ')[1]}</td><td>${r.message}</td></tr>`).join('')}
-                        </table>
+                        <div class="scroll-container">
+                            <table class="results-table">
+                                <tr><th>ID</th><th>Клієнт</th><th>Сервер</th><th>Подія</th></tr>
+                                ${data.immediate.map(r => `<tr><td>${r.event_id}</td><td>${r.client_time}</td><td>${r.server_time.split(' ')[1]}</td><td>${r.message}</td></tr>`).join('')}
+                            </table>
+                        </div>
                     </div>
                     <div style="flex:1">
                         <h4>Спосіб 2 (Пакетно)</h4>
-                        <table id="results-table">
-                            <tr><th>ID</th><th>Клієнт(LS)</th><th>Сервер</th><th>Подія</th></tr>
-                            ${data.batch.map(r => `<tr><td>${r.event_id}</td><td>${r.ls_save_time}</td><td>${r.server_time.split(' ')[1]}</td><td>${r.message}</td></tr>`).join('')}
-                        </table>
+                        <div class="scroll-container">
+                            <table class="results-table">
+                                <tr><th>ID</th><th>Клієнт(LS)</th><th>Сервер</th><th>Подія</th></tr>
+                                ${data.batch.map(r => `<tr><td>${r.event_id}</td><td>${r.ls_save_time}</td><td>${r.server_time.split(' ')[1]}</td><td>${r.message}</td></tr>`).join('')}
+                            </table>
+                        </div>
                     </div>
                 </div>`;
                 
