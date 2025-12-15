@@ -101,7 +101,6 @@ $block5_img = "<img src='images/weeknd_concert2.png' alt='Weeknd 2' style='width
             color: #555; 
         }
 
-        /* Стилі для таблиці результатів */
         .results-table { 
             width: 100%; 
             border-collapse: collapse; 
@@ -117,7 +116,6 @@ $block5_img = "<img src='images/weeknd_concert2.png' alt='Weeknd 2' style='width
 
         .results-table th { background: #e0e0e0; }
 
-        /* Стиль для скрол-контейнера */
         .scroll-container {
             max-height: 250px; 
             overflow-y: auto; 
@@ -391,7 +389,6 @@ $block5_img = "<img src='images/weeknd_concert2.png' alt='Weeknd 2' style='width
                     throw new Error("Помилка від сервера БД: " + data.error);
                 }
 
-                // Використовуємо контейнери зі скролом для таблиць
                 let html = `<h3>Звіт (Сервер: ${data.server_now})</h3>
                 <div style="display:flex; gap:10px;">
                     <div style="flex:1">

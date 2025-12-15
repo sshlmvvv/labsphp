@@ -62,9 +62,7 @@ try {
         }
     }
     elseif ($action === 'get_results') {
-        // ПРИБРАНО ЛІМІТ І ЗМІНЕНО СОРТУВАННЯ
         try {
-            // Вибираємо ВСІ записи, сортуємо за ID від меншого до більшого (ASC)
             $stmt1 = $pdo->query("SELECT * FROM lab5_immediate ORDER BY id ASC");
             $data1 = $stmt1->fetchAll();
         } catch (Exception $e) { $data1 = []; }
